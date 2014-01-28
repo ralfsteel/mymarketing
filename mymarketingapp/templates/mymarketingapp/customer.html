@@ -10,9 +10,19 @@
              {% for client_list in client_lists %}
            <li> {{ client_list }}</li>
             {% endfor %}
+
                     </ul>
         </div>
     </div>
 </div>
+        </div>
+        <div class="hero-unit">
+            <h1>Client form</h1>
+        <form action = "/Clientform/" method="post">
+            {% csrf_token %}
+            {{ client_form }}
+            <input type = "submit" value="Submit" />
+            </form>
+            </div>
 
 </body>

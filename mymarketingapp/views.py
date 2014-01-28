@@ -11,16 +11,15 @@ from mymarketingapp.forms import ClientForm
 def customer(request):
     client_lists = Client.objects.all().order_by('number')
     context = RequestContext(request)
+    client_form = ClientForm(request.POST)
     if request.method == 'Post':
-        form = ClientForm(request.post)
-        if form.is_valid():
+        if client_form.is_valid():
             return HttpResponseRedirect('/Thanks/')
         else:
-            form = ClientForm()
-
+            client_form = ClientForm()
     context_dict = {
         'client_lists': client_lists,
-        'form': form
+        'client_form': client_form
     }
 
     return render_to_response('mymarketingapp/customer.html', context_dict, context)
