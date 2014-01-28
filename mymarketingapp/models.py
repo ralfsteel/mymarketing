@@ -22,10 +22,16 @@ class Pricelist(models.Model):
     item_name = models.CharField(max_length=200)
     item_price = models.IntegerField(default=0)
 
+    def __unicode__(self):
+        return self.item_name
+
 
 class Promotional(models.Model):
     item_title = models.CharField(max_length=200)
     detail = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.item_title
 
 
 

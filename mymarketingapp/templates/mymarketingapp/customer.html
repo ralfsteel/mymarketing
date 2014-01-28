@@ -1,0 +1,18 @@
+
+<body>
+<title>Customer information page</title>
+    <div class="navbar navbar-inverse navbar-fixed">
+    <div class="navbar-inner">
+        <div class="container">
+             <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+        <h1>Customer information</h1>
+             {% for client_list in client_lists %}
+           <li> {{ client_list }}</li>
+            {% endfor %}
+                    </ul>
+        </div>
+    </div>
+</div>
+
+</body>
